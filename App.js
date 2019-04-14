@@ -6,12 +6,7 @@ import Home from './components/home/home'
 
 const AppNavigator = createStackNavigator({
   Login,
-  Home: {
-    screen: Home,
-    navigationsOptions:{
-      header: null
-    }
-  }
+  Home,
 })
 
 const AppContainer = createAppContainer(AppNavigator)
