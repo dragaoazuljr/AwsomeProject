@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, StatusBar, Text } from "react-native"
+import { View, StyleSheet, StatusBar, Text, TouchableOpacity } from "react-native"
 import { Gradient } from "./gradient";
 import FontAwesome, { Icons, IconTypes } from 'react-native-fontawesome'
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -15,18 +15,19 @@ export default class NavBar extends Component {
         <StatusBar translucent={true} backgroundColor={'rgba(0,0,0,0)'}></StatusBar>
         <Gradient style={stylef.gradient} colors={["#FA405F", '#D540B3']}>
           <View style={stylef.content}>
-            <View style={stylef.viewButton}>
-              <View style={stylef.menuButton}>
-                {/* <FontAwesome class={stylef.menuIcon}>{Icons.batteryEmpty}</FontAwesome>  */}
+            <TouchableOpacity onPress={() => alert('hi!')}>
+              <View style={stylef.menuViewButton}>
                 <Icon style={stylef.menuIcon} name="bars"></Icon>
               </View>
-            </View>
+            </TouchableOpacity>
             <View style={stylef.middle}>
               <Text style={stylef.text}>Home</Text>
             </View>
-            <View style={stylef.searchIcon}>
-              <Icon style={stylef.menuIcon} name="search"></Icon>
-            </View>
+            <TouchableOpacity onPress={() => alert('hi!')}>
+              <View style={stylef.menuViewButton}>
+                <Icon style={stylef.menuIcon} name="search"></Icon>
+              </View>
+            </TouchableOpacity>
           </View>
         </Gradient>
       </View>
@@ -61,9 +62,9 @@ const stylef = StyleSheet.create({
     fontWeight: '600'
   },
   menuButton: {
-    flex:1,
-    alignItems:'center',
-    justifyContent:'center',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   menuIcon: {
     color: '#FFFFFF',
@@ -72,9 +73,9 @@ const stylef = StyleSheet.create({
   viewButton: {
     width: 50,
   },
-  searchIcon: {
+  menuViewButton: {
     width: 50,
-    alignItems:'center'
+    alignItems: 'center'
   },
   middle: {
     flex: 1
